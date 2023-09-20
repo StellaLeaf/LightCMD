@@ -1,0 +1,14 @@
+name: LightCMD
+main: io.stellaleaf.lightcmd.lightCMD
+version: 0.0.1-SNAPSHOT
+api-version: '1.13'
+description: Bukkit Library for use LightAPI with commands
+authors: [ Stellaleaf ]
+commands:
+  light:
+    description: Main command for LightCMD
+    permission: lightcmd.op
+permissions:
+  lightcmd.*:
+  	lightcmd.op:
+  	 default: op
