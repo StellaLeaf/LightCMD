@@ -57,12 +57,17 @@ public class lightCMD extends JavaPlugin {
 //				int lightTime = Integer.parseInt(args[6]);
 				Location setLocation = new Location(Bukkit.getWorld(worldName),locX,locY,locZ);
 				setLight(setLocation, lightLevel, lightType);
+				if (lightLevel > 0) {
+					sender.sendMessage("[LightCMD] Light set in X: " + args[0] + " Y: " + args[1] + " Z: " + args[2] + "in WorldName: " + args[3]);
+				} else if (lightLevel == 0) {
+					sender.sendMessage("[LightCMD] Light deleted in X: " + args[0] + " Y: " + args[1] + " Z: " + args[2] + "in WorldName: " + args[3]);
+				}
 			} catch (NumberFormatException e) {
-				sender.sendMessage("[LightCMD] /light x y z world lightLevel BLOCK/SKY");
+				sender.sendMessage("[LightCMD] /light x y z worldName lightLevel BLOCK/SKY");
 			}
 				return true;
 		}
-		sender.sendMessage("[LightCMD] /light x y z world lightLevel BLOCK/SKY");
+		sender.sendMessage("[LightCMD] /light x y z worldName lightLevel BLOCK/SKY");
 		return false;
 	}
 }
